@@ -1,0 +1,10 @@
+- Document
+  - html
+    - head
+      - title
+        - Text: "My Document"
+    - body
+      - h1
+        - Text: "Hello, World!"
+      - p
+        - Text: "This is a paragraph."
