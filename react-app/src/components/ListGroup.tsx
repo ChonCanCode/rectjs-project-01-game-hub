@@ -1,5 +1,5 @@
-import { Fragment } from "react";
-import { MouseEvent } from "react";
+import { Fragment, useState } from "react";
+
 
 function ListGroup() {
   const items = [
@@ -11,22 +11,21 @@ function ListGroup() {
   ];
 
  let selectedIndex = 0;
-  
-  const handleClick = (event: MouseEvent) => console.log(event)
+ useState
 
 
-  
   return (
     <>
         <h1>List</h1>
         {items.length === 0 && <p>No item found</p>}
-        <ul className="list-group">
-          {items.map((index, item) => (
-            <li className="list-group-item active" 
-            key={index} 
-            onClick={handleClick}
+        <ul 
+        className="list-group">
+          {items.map((item, index) => (
+            <li className={selectedIndex === index ? 'list-group-item active' : 'list-group-item'}
+            key={item} 
+            onClick={ ()=> {selectedIndex = index; }}
             >
-              {index}
+              {item}
               </li>
             ))}
         </ul>
