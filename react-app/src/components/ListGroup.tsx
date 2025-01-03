@@ -10,7 +10,7 @@ function ListGroup() {
     'Paris'
   ];
 
-
+ let selectedIndex = 0;
   
   const handleClick = (event: MouseEvent) => console.log(event)
 
@@ -22,7 +22,7 @@ function ListGroup() {
         {items.length === 0 && <p>No item found</p>}
         <ul className="list-group">
           {items.map((index, item) => (
-            <li className="list-group-item" 
+            <li className="list-group-item active" 
             key={index} 
             onClick={handleClick}
             >
