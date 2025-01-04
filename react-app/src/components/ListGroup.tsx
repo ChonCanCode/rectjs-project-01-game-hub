@@ -2,7 +2,7 @@ import { Fragment, useState } from "react";
 
 
 function ListGroup() {
-  const items = [
+  let items = [
     'New York',
     'San Francisco',
     'Tokyo',
@@ -10,9 +10,7 @@ function ListGroup() {
     'Paris'
   ];
 
- let selectedIndex = 0;
- useState
-
+ const [selectedIndex, setSelectedindex] = useState(-1);
 
   return (
     <>
@@ -23,7 +21,7 @@ function ListGroup() {
           {items.map((item, index) => (
             <li className={selectedIndex === index ? 'list-group-item active' : 'list-group-item'}
             key={item} 
-            onClick={ ()=> {selectedIndex = index; }}
+            onClick={ ()=> {setSelectedindex(index)}}
             >
               {item}
               </li>
